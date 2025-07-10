@@ -1,0 +1,37 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "ts-node-dev --respawn src/index.ts",
+    "build": "npm  install && tsc"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^4.18.2",
+    "merge-descriptors": "^1.0.1",
+    "multer": "^2.0.1",
+    "pg": "^8.16.3",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.2.45",
+    "typescript": "^5.8.3",
+    "@types/dotenv": "^8.2.3",
+    "@types/express": "^5.0.3",
+    "@types/multer": "^2.0.0",
+    "@types/node": "^24.0.10",
+    "@types/cors": "^2.8.19",
+    "ts-node-dev": "^2.0.0"
+  },
+  "engines": {
+    "node": "14.x",
+    "npm": "6.x"
+  }
+}
