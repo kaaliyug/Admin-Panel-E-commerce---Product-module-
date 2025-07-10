@@ -15,7 +15,6 @@ client/.DS_Store
 # Server-specific ignores
 server/node_modules/
 server/built/
-server/uploads/
 server/.env
 server/.DS_Store
 
