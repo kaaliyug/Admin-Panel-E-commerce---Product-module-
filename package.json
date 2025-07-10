@@ -4,11 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cd server/built && node index.js",
-    "prebuild": "cd server && npm run build",
-    "build": "cd client && npm install --legacy-peer-deps && npm run build"
-
-  },
+  "start": "cd server/built && node index.js",
+  "prebuild": "cd server && npm install && npm run build-only",
+  "build": "cd client && npm install --legacy-peer-deps && npm run build"
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
