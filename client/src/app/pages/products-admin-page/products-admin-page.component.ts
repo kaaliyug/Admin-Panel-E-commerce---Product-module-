@@ -33,16 +33,19 @@ export class ProductsAdminPageComponent implements OnInit {
     this.loadAllProducts();   
   }  
 
-   loadAllProducts(): void {
+ loadAllProducts(): void {
   this.productService.getAll().subscribe({
-    next: (products: any[]) => {
-      this.allProducts = products.map((product: any) => {
+    next: (products) => {
+      this.allProducts = products.map(product => {
         if (product.images && Array.isArray(product.images)) {
-          product.images = product.images.map((image: any) => {
-            if (image.url.startsWith('http://localhost:3000')) {
+          product.images = product.images.map(image => {
+            // Prepend backend domain if url is relative
+            if (image.url.startsWith('/uploads')) {
+              image.url = "https://admin-panel-e-commerce.onrender.com" + image.url;
+            } else if (image.url.includes('localhost:3000')) {
               image.url = image.url.replace(
                 'http://localhost:3000',
-                'https://admin-panel-e-commerce.onrender.com' 
+                "https://admin-panel-e-commerce.onrender.com"
               );
             }
             return image;
@@ -51,13 +54,14 @@ export class ProductsAdminPageComponent implements OnInit {
         return product;
       });
 
-      console.log('✅ Products loaded:', this.allProducts);
+      console.log('✅ Products loaded with updated image URLs:', this.allProducts);
     },
     error: (err) => {
       console.error('❌ Failed to load products:', err);
     }
   });
 }
+
 
 
     delete(product: ProductInterface) {
