@@ -33,17 +33,31 @@ export class ProductsAdminPageComponent implements OnInit {
     this.loadAllProducts();   
   }  
 
-  loadAllProducts(): void {
+   loadAllProducts(): void {
   this.productService.getAll().subscribe({
-    next: (products) => {
-      this.allProducts = products;
+    next: (products: any[]) => {
+      this.allProducts = products.map((product: any) => {
+        if (product.images && Array.isArray(product.images)) {
+          product.images = product.images.map((image: any) => {
+            if (image.url.startsWith('http://localhost:3000')) {
+              image.url = image.url.replace(
+                'http://localhost:3000',
+                'https://admin-panel-e-commerce.onrender.com' 
+              );
+            }
+            return image;
+          });
+        }
+        return product;
+      });
+
       console.log('✅ Products loaded:', this.allProducts);
     },
     error: (err) => {
       console.error('❌ Failed to load products:', err);
     }
   });
-  } 
+}
 
 
     delete(product: ProductInterface) {
