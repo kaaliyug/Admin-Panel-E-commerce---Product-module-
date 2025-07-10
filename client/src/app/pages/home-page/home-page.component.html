@@ -9,7 +9,8 @@
 
       <a [routerLink]="['/products', p.id]">
         <div class="images_tab">
-          <img *ngFor="let img of p.images" [src]="'http://localhost:3000' + img.url" [alt]="img.alt" width="50">                        
+          <!-- <img *ngFor="let img of p.images" [src]="'http://localhost:3000' + img.url" [alt]="img.alt" width="50">                         -->
+          <img *ngFor="let img of p.images" [src]="backendUrl + img.url"  [alt]="img.alt" width="50">                        
         </div>
       </a>    
     </li>

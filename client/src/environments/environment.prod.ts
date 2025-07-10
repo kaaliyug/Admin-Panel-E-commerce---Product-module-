@@ -1,3 +1,4 @@
 export const environment = {
-  production: true
+  production: true,
+  backendUrl: 'https://admin-panel-e-commerce.onrender.com'
 };

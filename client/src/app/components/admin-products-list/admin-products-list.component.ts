@@ -1,5 +1,7 @@
 import { Component, EventEmitter, Input, OnChanges, OnDestroy, OnInit, Output, SimpleChanges } from '@angular/core';
 import { ProductInterface } from '../../../../../server/src/interface/Product';
+import { environment } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-admin-products-list',
@@ -11,6 +13,8 @@ export class AdminProductsListComponent implements OnInit, OnDestroy, OnChanges 
   @Input() products: ProductInterface[] = [];
   @Output() edited = new EventEmitter<ProductInterface>();
   @Output() deleted  = new EventEmitter<ProductInterface>();
+
+    backendUrl = environment.backendUrl;
 
   currentIndexes: number[] = [];
   intervalRefs: any[] = [];

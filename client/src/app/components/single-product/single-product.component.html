@@ -1,9 +1,11 @@
 <div class="wrapper" *ngIf="product; else loading">
    <div class="slider-container" *ngIf="product.images.length > 0">
     <button (click)="prevImage()">&#10094;</button>
-    <div class="image-slide">
+    <!-- <div class="image-slide">
       <img [src]="'http://localhost:3000' + product.images[currentImageIndex].url" [alt]="product.images[currentImageIndex].alt"
-      width="300" />
+      width="300" />      
+    </div> -->
+    <div class="image-slide"><img [src]="backendUrl + product.images[currentImageIndex].url" [alt]="product.images[currentImageIndex].alt" width="300" />
     </div>
     <button (click)="nextImage()">&#10095;</button>
    </div>

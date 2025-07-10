@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductInterface } from '../../../../../server/src/interface/Product';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from 'src/app/services/product.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-single-product',
@@ -9,6 +10,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./single-product.component.css']
 })
 export class SingleProductComponent implements OnInit {
+   backendUrl = environment.backendUrl;
 
   product: ProductInterface | null = null;
   currentImageIndex = 0;
