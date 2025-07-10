@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <h1><a> <img src="assets/logo.webp" alt="My Logo" /></a></h1>
+  <nav>
+    <ul>
+      <li><a routerLink="/">home</a></li>
+      <li><a routerLink="admin/products-panel">admin</a></li>
+      <li><a routerLink="/admin/products-form">Form</a></li>
+      <li><a routerLink="/">contacts</a></li>
+      <li><a routerLink="/">signIn</a></li>
+    </ul>
+  </nav>
+</div>
+
+
+<div *ngIf="router.url === '/'">
+</div>
+
+<div *ngIf="router.url === '/admin'">
+</div>

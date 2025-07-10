@@ -1,0 +1,219 @@
+::ng-deep app-admin-products-form {
+  --s: 65px;
+  --c1: #ecd078;
+  --c2: #542437;
+  --l1: #0000 48%, var(--c1) 0 52%, #0000 0;
+  --l2: #0000 1.3%, var(--c2) 0 32%, #0000 0;
+  background: linear-gradient(-45deg, var(--l2)), linear-gradient(45deg, var(--l1)), linear-gradient(45deg, var(--l2)) calc(var(--s) / 2) calc(var(--s) / 2), linear-gradient(-45deg, var(--l1)) var(--c2);
+  background-size: calc(var(--s) * 2) var(--s), var(--s) var(--s);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-container {
+  display: grid;
+  gap:2em;    
+  opacity: .9;
+  background-color: #f5edf0;
+  width:40%;
+  width: 35rem;
+  padding-inline: 30px;
+  padding-block: 50px;
+  margin: 57px auto;
+}
+.form-container form {
+  display: grid;
+}
+.form-container h2 {
+    font-size: 28px;
+    color: rgba(165, 138, 39, 0.93);
+    font-family: Oswald, sans-serif;
+    font-weight: 600;
+    line-height: 26px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-bottom:20px;
+}
+form {
+    display: grid;
+    gap: 1em;
+    /* width: 30rem; */
+}
+.inputfields {
+  border: 2px solid #e0e0e0;
+  border-radius: .7rem;
+  margin-bottom: .5rem;
+  padding-top: .3rem;
+  position: relative;
+  display: grid;
+  align-content:flex-start;
+}
+
+
+
+.inputfields label {
+    display: inline-block;
+    font-size: 1rem;
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+    font-style: normal;
+    line-height: 1.2;
+    text-transform: capitalize;
+    text-align: left;
+    color: #5f5f5f;
+    cursor: pointer;
+    padding: .3rem .88rem;  
+}
+input {
+  width:100%;
+  height: 2.7rem;
+  background-color: #22241f;
+  color: #fff;  
+  padding-inline:18px;
+  border-radius:6px;
+  font-size: 15px;
+  font-family: Nunito Sans, sans-serif;
+  font-weight: 600;
+  font-style: normal;  
+  margin: 0;
+  opacity: .9;
+  outline: none;
+  user-select: text;  
+  align-content: center;
+}
+.image-container {
+   border: 2px solid #e0e0e0;
+  border-radius: .7rem;
+}
+.image-container h3 {
+  display: inline-block;
+  font-size: 1rem;
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  line-height: 1.2;
+  text-transform: capitalize;
+  text-align: left;
+  color: #5f5f5f;
+  cursor: pointer;
+  padding: .3rem .88rem;   
+}
+.image-container > div  {
+  margin-bottom: 15px;
+   display: grid;
+   gap:12px;
+}
+
+.image-container > button {
+  all:unset;  
+  display: block;
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(3, 95, 37);
+  font-size: 1rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  width: 12rem;
+  padding-block:12px;
+  border: none;
+  border-radius: .8rem;
+  margin: 1rem auto;
+  opacity: .8;
+  outline: none;
+}
+.image-container > div > button,
+.form-container form >:nth-child(2 of button) {
+  all:unset;  
+  cursor: pointer;
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  background-color: rgb(231, 41, 41);
+  font-size: 1.3rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  width: 12rem;
+  padding-block:10px;
+  border: none;
+  border-radius: .8rem;
+  margin: 1rem auto;
+  opacity: .8;
+  outline: none;
+}
+.image-container > div > button {
+  font-size: 1rem !important;  
+  padding-block:12px !important;
+}
+.image-container > button:hover,
+.image-container > div > button:hover,
+.form-container form >:nth-child(2 of button):hover {
+  opacity: 1;
+}
+
+/* --------------------------button--------------------------------- */
+
+.form-container form >:nth-child(1 of button)  {
+  all:unset;
+
+  padding:0.75rem 3em;
+  background: hsl(185, 53%, 15%);
+  border:0.1em solid hsl(185,53%,34%);
+  border-radius:100vw;
+  cursor: pointer;
+  transition: background-color 250ms;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+
+  font-size: 1.3rem;
+  font-family: Montserrat, sans-serif;
+  font-weight: 700;
+  width: fit-content;
+  padding-block:10px;
+  margin-inline:auto ;
+  margin-top:20px;
+  color:#f5edf0;  
+  text-transform: uppercase;
+}
+.form-container form >:nth-child(1 of button):hover,
+.form-container form >:nth-child(1 of button):focus-visible {
+  background: hsl(185, 53%, 34%);
+}
+.form-container form >:nth-child(1 of button) > span {
+  position: absolute;
+  width: 33.33%;
+  height: 100%;
+  background: transparent;
+  opacity: 0.5;
+  z-index: -1;
+}
+.form-container form >:nth-child(1 of button) > :first-child {
+  left: 0;
+  top:0;
+}
+.form-container form >:nth-child(1 of button) > :last-child {
+  right: 0;
+  top:0;
+}
+.form-container form >:nth-child(1 of button)::before {
+  content:"";
+  position: absolute;
+  background: hsl(200 60% 20%);
+  width:10%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  inset:0;
+  margin:auto;
+  z-index: -1;
+  opacity: 0;
+  transition: 
+  transform 1000ms 200ms, opacity 200ms;
+}
+.form-container form >:nth-child(1 of button):active::before {
+  transform: scale(20);
+  opacity: 1;
+  transition: transform 1000ms, opacity 500ms;  
+}

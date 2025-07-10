@@ -1,0 +1,21 @@
+<div class="wrapper" *ngIf="product; else loading">
+   <div class="slider-container" *ngIf="product.images.length > 0">
+    <button (click)="prevImage()">&#10094;</button>
+    <div class="image-slide">
+      <img [src]="'http://localhost:3000' + product.images[currentImageIndex].url" [alt]="product.images[currentImageIndex].alt"
+      width="300" />
+    </div>
+    <button (click)="nextImage()">&#10095;</button>
+   </div>
+
+  <div class="product-details">
+    <h2>{{ product.name }}</h2>
+    <p>Lorem ipsum dolor site amet consectetur adipisicing elit. A numquam maiores autem aliquid officiis suscipit velit atque. Natus cupiditate omnis temporibus quisquam, aspernatur delectus, ea culpa, nesciunt suscipit iure reiciendis suscipit reiciendis.</p>
+    <p><strong>SKU:</strong> {{ product.sku }}</p>
+    <p><strong>Price:</strong> ₹{{ product.price }}</p>
+  </div>
+</div>
+<ng-template #loading>
+  <p>Loading product...</p>
+</ng-template>
+

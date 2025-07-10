@@ -1,0 +1,47 @@
+
+<div class="wrapper">
+  <div [ngClass]="{ 'form-container': true, 'edit-mode': isEditMode, 'add-mode': !isEditMode }">
+      <form (ngSubmit)="isEditMode ? updateProduct() : addProduct()" #productForm="ngForm">
+      <h2 *ngIf="!isEditMode">Add Product</h2>
+      <h2 *ngIf="isEditMode">Edit Product</h2>
+
+      <!-- Basic fields -->
+       
+      <!-- SKU -->
+      <div class="inputfields">
+        <label for="sku">SKU</label>
+        <input type="text" id="sku" name="sku" [(ngModel)]="productFormData.sku" placeholder="SKU" required />
+      </div>
+
+      <!-- Name -->
+      <div class="inputfields">
+        <label for="name">Product Name</label>
+        <input type="text" id="name" name="name" [(ngModel)]="productFormData.name" placeholder="Name" required />
+      </div>
+
+      <!-- Price -->
+      <div class="inputfields">
+        <label for="price">Price</label>
+        <input type="number" id="price" name="price" [(ngModel)]="productFormData.price" placeholder="Price" required />
+      </div>
+
+      <!-- Images -->
+      <div class="image-container">
+        <h3>Images</h3> 
+        <div *ngFor="let image of productFormData.images; let i = index">
+          <input type="text" [(ngModel)]="image.url" name="url{{ i }}" placeholder="Image URL" required />
+          <input type="text" [(ngModel)]="image.alt" name="alt{{ i }}" placeholder="Alt Text" />
+          <input type="text" [(ngModel)]="image.title" name="title{{ i }}" placeholder="Title" />
+          <input type="number" [(ngModel)]="image.width" name="width{{ i }}" placeholder="Width" />
+          <input type="number" [(ngModel)]="image.height" name="height{{ i }}" placeholder="Height" />
+          <button type="button" (click)="removeImageField(i)"><span></span> Remove<span></span></button>
+        </div>
+        <button type="button" (click)="addImageField()">Add Image</button>
+      </div> 
+
+      <!-- Submit -->
+      <button type="submit"><span></span>{{ isEditMode ? 'Update' : 'Add' }} Product<span></span></button>
+      <button *ngIf="isEditMode" type="button" (click)="resetForm()">Cancel Edit</button>          
+    </form>    
+  </div>
+</div>
