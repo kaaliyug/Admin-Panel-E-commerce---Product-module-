@@ -38,6 +38,7 @@ connectDB().then(() => {
     console.log('✅ Connected to DB 📦');
 
     app.use('/uploads', express.static(path.join(__dirname, '..', 'uploads')) );
+    console.log('🧩 Serving uploads from:', path.join(__dirname, '..', 'uploads'));
     app.use(express.json()); 
     app.use(cors({
       credentials: true,
