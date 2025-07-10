@@ -6,7 +6,8 @@
   "scripts": {
     "start": "cd server/built && node index.js",
     "prebuild": "cd server && npm run build",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm install --legacy-peer-deps && npm run build"
+
   },
   "keywords": [],
   "author": "",
